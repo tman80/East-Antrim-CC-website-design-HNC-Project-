@@ -1,0 +1,95 @@
+<!doctype html>                                                       <!--lets browser know what type of document this is-->  
+<html lang="en">                                                                <!--opening html tag-->
+<head>                                                                <!--opening head tag, all meta data and external links etc are stored in the head section, none of this is visable to the user on the webpage-->
+<meta charset="utf-8">                                                <!--character encoding for for unicode-->
+<title>East Antrim Cycling Club About Us Page</title>                 <!--this is the title seen in the browser bar-->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>  <!--link to external jquery library so page can use its interactive features--> 
+<script src="scripts/jquery.flexslider.js"></script>                  <!--script tag which holds the link to allow the flexslider to work-->
+<meta name="description" content="East Antim Cycling Club about us page"><!--meta data to help improve SEO-->
+<meta name="keywords" content="East Antrim, Cyling Club, Newtownabbey Cycling, Cycling, about us."><!--meta data to help improve SEO-->
+<meta name="author" content="Trevor Campbell">                        <!--meta data to help improve SEO-->
+<link href="http://fonts.googleapis.com/css?family=Bitter" rel="stylesheet" type="text/css"><!--adds a link to the Google fonts API-->
+<link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css"><!--adds a link to the Google fonts API-->
+<link href="styles/styles.css" rel="stylesheet" type="text/css">      <!--this links to the styles sheet which holds all css data-->
+<link href="styles/normalise.css" rel="stylesheet" type="text/css">   <!--this links to normalise css file to provide better cross-browser consistency for the default styling of html elements.-->  
+<link rel="stylesheet" href="styles/flexslider.css"  type="text/css"> <!--link created to flexslider file in styles folder to make FS work-->
+<script>                                                              <!--charset specifies the character encoding for external script file-->
+$(window) .load(function() {                                          <!--the jquery calls the load function and initializes the flex-slider to work-->        
+$('.flexslider') .flexslider({                                        <!--this can hold different flexslider settings between the brackets-->
+slideshowSpeed: 4000,                                                 <!--sets the flexslider to change image every four seconds-->
+});                                                                   <!--closing brackets for the flexslider speed settings--> 
+});                                                                   <!--closing brackets for all the flexslider function settings-->
+</script>                                                             <!--closing script tag for the flexslider section-->
+<script>                                                              <!--This script section has the code which allows the website to be responsiveness-->
+$(function() {                                                        <!--jquery function to hold all the nav bar jquery settings-->
+var pull   = $('#pull');                                              <!--links to the pull id code initiating the pull down menu once clicked upon by the user. This is achieved by using this jQuery slideToggle()-->
+menu   = $('nav ul');                                                 <!--jquery function for operating the drop down nav unordered list--> 
+$(pull).on('click', function(e) {                                     <!--this create the pull down event when the user clicks on the nav bar-->
+ e.preventDefault();                                                  <!--this prevents the default click event from happening--> 
+ menu.slideToggle(); }
+ ); 
+ $(window).resize(function(){                                         <!--This call the resize function allowing the website to resize when neccessary-->
+ var w = $(this)
+ .width(); 
+ if(w > 800 && menu.is(':hidden')) {                                  <!--If the window to the website is greater than 800px then the menu will be hidden using the resize function-->
+ menu.removeAttr('style'); } 
+ }
+ ); $('li')
+ .on('click', function(e) {                                           <!--If the window to the website is smaller than 800px then the menu will become a slide toggle and will be on view-->
+ var w = $(window).width(); 
+ if(w < 800 ) {
+ menu.slideToggle(); 
+ } }
+ ); 
+ $('.panel').height($(window).height());                              <!--sets the elements height equal to the windows height-->
+ }
+ ); 
+</script>                                                             <!--closing script tag which holds website responsiveness-->
+</head>                                                               <!--closing head tag-->
+<body>                                                                <!--opeining body tag, all visable page content is held in the body-->
+<div class="container">                                               <!--opening container div tag, all page content is held inside this-->
+<div class="weather">Weather<br>Today</div>                           <!--created a div to hold the "weather today" text-->
+<iframe width="120" height="73" scrolling="no" style="border:0;" src="http://www.weathercast.co.uk/meteo/hptool/index.php?cid=44X139&cityName=Belfast&l=en&style=13&v=gb&ver=2&c1=ebf1f8&c2=0060ac&c3=000000&c4=ffffff&c5=000000&c6=ffffff&c7=0060ac&f1a=1&f1b=1&f2a=1&f2b=1&f3a=1&f3b=1&ct1=1&ct2=0&ct3=6&ct4=0&ct5=0&fcd=0"></iframe><!--closing iframe tag which holds link to real time external weather data, width and height both set to control size, frame set to have no scrollbar, frame also set to have no border using the CSS style attribute as the frameborder function is obsolete in html 5, the scrolling attribute is also obsolete in html 5 but still supported by all major browsers-->
+<div class="flexslider">                                              <!--div to hold all flexslider content-->
+  <ul class="slides">                                                 <!--unordered list class to hold the imageslider list-->
+    <li><img src="images/SliderImage1.jpg" alt="Group photo" title="Group photo"/></li><!--first image that will appear on flexslider-->
+    <li><img src="images/SliderImage2.jpg" alt="Group photo" title="Group photo"/></li><!--second image that will appear on flexslider-->
+    <li><img src="images/SliderImage3.jpg" alt="Group photo" title="Group photo"/></li><!--third image that will appear on flexslider-->
+    <li><img src="images/SliderImage4.jpg" alt="Group photo" title="Group photo"/></li><!--fourth image that will appear on flexslider-->
+    <li><img src="images/SliderImage5.jpg" alt="Group photo" title="Group photo"/></li><!--fifth image that will appear on flexslider-->
+  </ul>                                                               <!--closing unordered list div tag-->
+</div>                                                                <!--closing flexslider div tag-->
+<nav class="clearfix">                                                <!--clearfix created to hold nav bar content in correct position-->
+  <ul class="clearfix">                                               <!--ul class clearfix created to hold elements in place-->
+    <li><a href="index.html">Home</a></li>                            <!--creates link to home page-->
+    <li><a href="aboutus.html">About Us</a></li>                      <!--creates link to about us page-->
+    <li><a href="clubrides.html">Club Rides</a></li>                  <!--creates link to club rides page-->
+    <li><a href="safecycling.html">Safe Cycling</a></li>              <!--creates link to safe cycling page-->
+    <li><a href="gallery.html">Gallery</a></li>                       <!--creates link to gallery page-->      
+    <li><a href="faq.html">FAQ</a></li>                               <!--creates link to faq page-->
+    <li><a href="contactus.html">Contact Us</a></li>                  <!--creates link to contact us page-->
+  </ul>                                                               <!--closing ul div tag-->
+  <a href="#" id="pull">Menu</a>                                      <!--makes the menu text a link and has id pull for css styling-->   
+</nav>                                                                <!--closing nav bar div tag-->
+<div class="clearfix"><h1>About Us</h1></div>                         <!--clearfix div created to hold the h1 header-->
+<div class= "clearfix">                                               <!-- to hold all article third left and right elements in place-->
+  <div class = "article-third-left">                                  <!--opening article third left div tag-->
+    <p>East Antrim Cycling Club is a recreational club that promotes cycling at all levels. We welcome both novice and seasoned riders alike. We aim to accommodate all levels and we will never leave you to ride home alone. Give us a go and start riding in a group of like minded people. Currently we have club rides on a Saturday and Sunday leaving from Ballyearl Leisure Centre at 10am. These rides are tailored to suit all levels and depending on numbers we will normally have three runs, an A Run, B Run and a C run.</p><!--all paragraph text stored in between P tags-->
+  </div>                                                              <!--closing article third left div tag-->
+  <div class = "article-third-left">                                  <!--opening article third left div tag-->
+    <p>The C Run is at a slower pace and will help to develop each individual’s performance and stamina. We normally stop for coffee during the ride so everybody has a chance to refuel. We are a social club and our rides are tailored to be friendly, fun and at times hilly. Our aim is to teach people about cycling, improve fitness and meet new people. During the winter months we also hold club spin classes every Tuesday and Thursday nights from 7.30pm.</p>                <!--all paragraph text stored in between P tags-->
+  </div>                                                              <!--closing article third left div tag-->
+  <div class = "article-third-right">                                 <!--opening article third left div tag-->
+    <p>This a great way to keep up the fitness levels during the dark nights. After the winter months we plan to have two training rides during the week, most likely a Tuesday evening and Thursday evening. These rides will be posted up on our Facebook page to inform club members about what is happening during any particular week. Everybody is welcome so come along and see for yourself.</p><!--all paragraph text stored in between P tags-->
+  </div>
+</div>  <!--closing article third right div tag-->
+  <div class="footer clearfix">                                       <!--opening footer clearfix div which will store all footer content-->
+    <div class = "article-third-left"><h5>For direct enquiries contact: Alan McGinty 164 Old Carrick Road, Carrickfergus Phone: 02893 869334 Email: allanmcginty@yahoo.co.uk</h5></div>                 <!--article third left div which holds contact details-->
+  <div class = "article-third-left"><h5>Copyright&copy; East Antrim Cycling Club 2017</h5></div>                                                                    <!--article third left div which holds the h5 text-->
+  <div class = "article-third-right"><h2>Find us at: <a href="https://twitter.com/eastantrimcc?lang=en" style="margin-right: 10px;" target="_blank">Twitter</a>                                                <!--article third right div which holds link to twitter-->        
+  <a href="https://en-gb.facebook.com/eastantrimcyclingclub/" style="margin-left: 20px;" target="_blank">Facebook</a></h2><!--this anchor tag holds link to facebook-->
+  </div>                                                              <!--closing article third right div tag-->
+  </div>                                                              <!--closing footer clearfix class div tag-->
+</div>                                                                <!--closing main container div tag-->                        
+</body>                                                               <!--closing body tag-->
+</html>                                                               <!--closing html tag-->

@@ -1,0 +1,95 @@
+<!doctype html>                                                       <!--lets browser know what type of document this is-->  
+<html lang="en">                                                      <!--opening html tag-->
+<head>                                                                <!--opening head tag, all meta data and external links etc are stored in the head section, none of this is visable to the user on the webpage-->
+<meta charset="utf-8">                                                <!--character encoding for for unicode-->
+<title>East Antrim Cycling Club Gallery Page</title>                  <!--this is the title seen in the browser bar--> 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script><!--link to external jquery library so page can use its interactive features--> 
+<script src="scripts/jquery.flexslider.js"></script>                  <!--script tag which holds the link to allow the flexslider to work-->
+<meta name="description" content="East Antrim Cycling Club gallery page."><!--meta data to help improve SEO-->
+<meta name="keywords" content="East Antrim, Cyling Club, Newtownabbey Cycling, Cycling Club, Cycling Photos"><!--meta data to help improve SEO-->
+<meta name="author" content="Trevor Campbell">                        <!--meta data to help improve SEO-->                         
+<link href="http://fonts.googleapis.com/css?family=Bitter" rel="stylesheet" type="text/css"><!--adds a link to the Google fonts API-->
+<link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css"><!--adds a link to the Google fonts API-->
+<link href="styles/styles.css" rel="stylesheet" type="text/css">      <!--this links to the styles sheet which holds all css data-->
+<link href="styles/normalise.css" rel="stylesheet" type="text/css">   <!--this links to normalise css file to provide better cross-browser consistency for the default styling of html elements.--> 
+<link rel="stylesheet" href="styles/flexslider.css"  type="text/css"> <!--link created to flexslider file in styles folder to make FS work-->
+<script>                                                              <!--this script enables the load function for the flexslider to work-->
+$(window) .load(function() {                                          <!--the jquery calls the load function and initializes the flex-slider to work-->        
+$('.flexslider') .flexslider({                                        <!--this can hold different flexslider settings between the brackets-->
+slideshowSpeed: 4000,                                                 <!--sets the flexslider to change image every four seconds-->
+});                                                                   <!--closing brackets for the flexslider speed settings-->
+});                                                                   <!--closing brackets for all the flexslider function settings--> 
+</script>                                                             <!--closing script tag for the flexslider section-->
+<script>                                                              <!--This script section has the code which allows the website to be responsiveness--> 
+$(function() {                                                        <!--jquery function to hold all the nav bar jquery settings-->
+var pull   = $('#pull');                                              <!--links to the pull id code initiating the pull down menu once clicked upon by the user. This is achieved by using this jQuery slideToggle()-->
+menu   = $('nav ul');                                                 <!--jquery function for operating the drop down nav unordered list-->                                               
+$(pull).on('click', function(e) {                                     <!--this create the pull down event when the user clicks on the nav bar-->           
+ e.preventDefault();                                                  <!--this prevents the default click event from happening-->
+ menu.slideToggle(); }
+ ); 
+ $(window).resize(function(){                                         <!--This call the resize function allowing the website to resize when neccessary-->
+ var w = $(this)
+ .width(); 
+ if(w > 800 && menu.is(':hidden')) {                                  <!--If the window to the website is greater than 800px then the menu will be hidden using the resize function-->
+ menu.removeAttr('style'); } 
+ }
+ ); $('li')
+ .on('click', function(e) {                                           <!--If the window to the website is smaller than 800px then the menu will become a slide toggle and will be on view-->                                   
+ var w = $(window).width(); 
+ if(w < 800 ) {
+ menu.slideToggle(); 
+ } }
+ ); 
+ $('.panel').height($(window).height());                              <!--sets the elements height equal to the windows height-->
+ }
+ ); 
+</script>                                                             <!--closing script tag which holds website responsiveness-->    
+</head>                                                               <!--closing head tag-->
+<body>                                                                <!--opeining body tag, all visable page content is held in the body-->
+<div class="container">                                               <!--opening main container div tag-->
+<div class="weather">Weather<br>Today</div>                           <!--created a div to hold the weather today text-->
+<iframe width="120" height="73" scrolling="no" style="border:0;" src="http://www.weathercast.co.uk/meteo/hptool/index.php?cid=44X139&cityName=Belfast&l=en&style=13&v=gb&ver=2&c1=ebf1f8&c2=0060ac&c3=000000&c4=ffffff&c5=000000&c6=ffffff&c7=0060ac&f1a=1&f1b=1&f2a=1&f2b=1&f3a=1&f3b=1&ct1=1&ct2=0&ct3=6&ct4=0&ct5=0&fcd=0"></iframe><!--closing iframe tag which holds link to real time external weather data, width and height both set to control size, frame set to have no scrollbar, frame also set to have no border using the CSS style attribute as the frameborder function is obsolete in html 5, the scrolling attribute is also obsolete in html 5 but still supported by all major browsers-->
+<div class="flexslider">                                              <!--div to hold all flexslider content-->
+  <ul class="slides">                                                 <!--unordered list class to hold the flexslider list-->
+    <li><img src="images/SliderImage1.jpg" alt="Group photo" title="Group photo"/></li><!--first image that will appear on flexslider--> 
+    <li><img src="images/SliderImage2.jpg" alt="Group photo" title="Group photo"/></li><!--second image that will appear on flexslider-->
+    <li><img src="images/SliderImage3.jpg" alt="Group photo" title="Group photo"/></li><!--third image that will appear on flexslider-->
+    <li><img src="images/SliderImage4.jpg" alt="Group photo" title="Group photo"/></li><!--fourth image that will appear on flexslider-->
+    <li><img src="images/SliderImage5.jpg" alt="Group photo" title="Group photo"/></li><!--fifth image that will appear on flexslider-->
+  </ul>                                                               <!--closing unordered list div tag-->
+</div>                                                                <!--closing flexslider div tag-->
+<nav class="clearfix">                                                <!--clearfix created to hold nav bar content in correct position-->
+  <ul class="clearfix">                                               <!--ul class clearfix created to hold list elements-->
+    <li><a href="index.html">Home</a></li>                            <!--creates link to home page-->
+    <li><a href="aboutus.html">About Us</a></li>                      <!--creates link to about us page-->
+    <li><a href="clubrides.html">Club Rides</a></li>                  <!--creates link to club rides page-->
+    <li><a href="safecycling.html">Safe Cycling</a></li>              <!--creates link to safe cycling page-->
+    <li><a href="gallery.html">Gallery</a></li>                       <!--creates link to gallery page-->
+    <li><a href="faq.html">FAQ</a></li>                               <!--creates link to faq page-->
+    <li><a href="contactus.html">Contact Us</a></li>                  <!--creates link to contact us page-->
+  </ul>                                                               <!--closing ul div tag-->
+  <a href="#" id="pull">Menu</a>                                      <!--makes the menu text a link and has id pull for css styling-->   
+</nav>                                                                <!--closing nav bar div tag-->
+<div class="clearfix"><h1>Gallery</h1><p>Welcome to the East Antrim Cycling Club gallery page. Click on the text or images below to view each individual album or the See All link to view all albums</p>.<a href="https://www.facebook.com/pg/eastantrimcyclingclub/photos/?tab=albums" target="_blank"><b>See All</b></a></div>                                                                      <!--clearfix created to hold the h1, paragraph text and the h3 see all link-->
+<div class= "clearfix">                                               <!-- clearfix to hold all article quarter left and right elements in place-->
+  <div class="article-third-left"><a href="eacccharityride.html" target="_blank"><!--opening article third left div tag-->
+  <img src="images/new3.jpg" alt="EACC Charity ride" title="EACC Charity ride"/><h2>EACC Charity ride</h2></a>  
+  </div>                                                              <!--closing article third left div tag-->
+  <div class="article-third-left"><a href="audigp2016.html" target="_blank"><!--opening article third left div tag-->
+  <img src="images/new4.jpg" alt="Audi GP 2016" title="Audi GP 2016"/><h2>Audi GP 2016</h2></a> 
+  </div>                                                              <!--closing article third left div tag-->
+  <div class="article-third-right"><a href="phoenixgp2015.html" target="_blank"><!--opening article third right div tag-->
+  <img src="images/new5.jpg" alt="Phoenix GP 2015" title="Phoenix GP 2015"/><h2>Phoenix GP 2015</h2></a>  
+  </div>                                                              <!--closing article third right div tag-->
+</div>                                                                <!--closing clearfix div tag-->
+<div class="footer clearfix">                                         <!--opening footer clearfix tag which will store all footer content-->
+  <div class = "article-third-left"><h5>For direct enquiries contact: Alan McGinty 164 Old Carrick Road, Carrickfergus Phone: 02893 869334 Email: allanmcginty@yahoo.co.uk</h5></div>                          <!--article third left div which holds contact details-->
+  <div class = "article-third-left"><h5>Copyright&copy; East Antrim Cycling Club 2017</h5></div>                                                                    <!--article third left div which holds the h5 text-->
+  <div class = "article-third-right"><h2>Find us at: <a href="https://twitter.com/eastantrimcc?lang=en" style="margin-right: 10px;" target="_blank">Twitter</a>                                                <!--article third right div which holds link to twitter-->        
+  <a href="https://en-gb.facebook.com/eastantrimcyclingclub/" style="margin-left: 20px;" target="_blank">Facebook</a></h2><!--this anchor tag holds link to facebook-->
+  </div>                                                              <!--closing article third right div tag-->
+</div>                                                                <!--closing footer clearfix class div tag-->
+</div>                                                                <!--closing main container div tag-->
+</body>                                                               <!--closing body tag-->
+</html>                                                               <!--closing html tag-->

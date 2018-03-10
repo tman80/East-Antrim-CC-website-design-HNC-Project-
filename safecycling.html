@@ -1,0 +1,276 @@
+<!doctype html>                                                       <!--lets browser know what type of document this is-->   
+<html lang="en">                                                      <!--opening html tag-->
+<head>                                                                <!--opening head tag, all meta data and external links etc are stored in the head section, none of this is visable to the user on the webpage-->
+<meta charset="utf-8">                                                <!--character encoding for for unicode-->
+<title>East Antrim Cycling Club Safe Cysling Page</title>             <!--this is the title seen in the browser bar--> 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> <!--link to external jquery library so page can use its interactive features--> 
+<script src="scripts/jquery.flexslider.js"></script>                  <!--script tag which holds the link to allow the flexslider to work-->
+<meta name="description" content="East Antim Cycling Club safe cycling page "><!--meta data to help improve SEO-->
+<meta name="keywords" content="East Antrim Cyling Club, Newtownabbey Cycling, Cycling, Safe cycling"><!--meta data to help improve SEO-->
+<meta name="author" content="Trevor Campbell">                        <!--meta data to help improve SEO-->             
+<link href="http://fonts.googleapis.com/css?family=Bitter" rel="stylesheet" type="text/css"><!--adds a link to the Google fonts API-->
+<link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css"><!--adds a link to the Google fonts API-->
+<link href="styles/styles.css" rel="stylesheet" type="text/css">      <!--this links to the styles sheet which holds all css data-->
+<link href="styles/normalise.css" rel="stylesheet" type="text/css">   <!--this links to normalise css file to provide better cross-browser consistency for the default styling of html elements.--> 
+<link rel="stylesheet" href="styles/flexslider.css"  type="text/css"> <!--link created to flexslider file in styles folder to make FS work-->
+<script>                                                              <!--this script enables the load function for the flexslider to work-->
+$(window) .load(function() {                                          <!--the jquery calls the load function and initializes the flex-slider to work-->        
+$('.flexslider') .flexslider({                                        <!--this can hold different flexslider settings between the brackets-->
+slideshowSpeed: 4000,                                                 <!--sets the flexslider to change every image four seconds-->
+});                                                                   <!--closing brackets for the flexslider speed settings-->
+});                                                                   <!--closing brackets for all the flexslider function settings--> 
+</script>                                                             <!--closing script tag for the flexslider section-->
+<script>                                                              <!--This script section has the code which allows the website to be responsiveness-->
+$(function() {                                                        <!--jquery function to hold all the nav bar jquery settings-->
+var pull   = $('#pull');                                              <!--links to the pull id code initiating the pull down menu once clicked upon by the user. This is achieved by using this jQuery slideToggle()-->
+menu   = $('nav ul');                                                 <!--jquery function for operating the drop down nav unordered list-->                                               
+$(pull).on('click', function(e) {                                     <!--this create the pull down event when the user clicks on the nav bar-->           
+ e.preventDefault();                                                  <!--this prevents the default click event from happening-->
+ menu.slideToggle(); }
+ ); 
+ $(window).resize(function(){                                         <!--This call the resize function allowing the website to resize when neccessary-->
+ var w = $(this)
+ .width(); 
+ if(w > 800 && menu.is(':hidden')) {                                  <!--If the window to the website is greater than 800px then the menu will be hidden using the resize function-->
+ menu.removeAttr('style'); } 
+ }
+ ); $('li')
+ .on('click', function(e) {                                           <!--If the window to the website is smaller than 800px then the menu will become a slide toggle and will be on view-->
+ var w = $(window).width(); 
+ if(w < 800 ) {                                                      
+ menu.slideToggle(); 
+ } }
+ ); 
+ $('.panel').height($(window).height());                              <!--sets the elements height equal to the windows height-->
+ }
+ ); 
+</script>                                                             <!--closing script tag which holds website responsiveness-->  
+</head>                                                               <!--closing head tag-->
+<body>                                                                <!--opeining body tag, all visable content is held in the body--> 
+<a id="top"></a>                                                    <!--created a link that gets the user back to the top of the page-->
+<div class="container">                                               <!--opening main container div tag, all page content goes in here-->
+<div class="weather">Weather<br>Today</div>                           <!--created a div to hold the "weather today" text-->
+<iframe width="120" height="73" scrolling="no" style="border:0;" src="http://www.weathercast.co.uk/meteo/hptool/index.php?cid=44X139&cityName=Belfast&l=en&style=13&v=gb&ver=2&c1=ebf1f8&c2=0060ac&c3=000000&c4=ffffff&c5=000000&c6=ffffff&c7=0060ac&f1a=1&f1b=1&f2a=1&f2b=1&f3a=1&f3b=1&ct1=1&ct2=0&ct3=6&ct4=0&ct5=0&fcd=0"></iframe><!--closing iframe tag which holds link to real time external weather data, width and height both set to control size, frame set to have no scrollbar, frame also set to have no border using the CSS style attribute as the frameborder function is obsolete in html 5, the scrolling attribute is also obsolete in html 5 but still supported by all major browsers-->
+<div class="flexslider">                                              <!--div to hold all flexslider content-->
+  <ul class="slides">                                                 <!--unordered list class to hold the imageslider list-->
+    <li><img src="images/SliderImage1.jpg" alt="Group photo" title="Group photo"/></li><!--first image that will appear on flexslider-->
+    <li><img src="images/SliderImage2.jpg" alt="Group photo" title="Group photo"/></li><!--second image that will appear on flexslider-->
+    <li><img src="images/SliderImage3.jpg" alt="Group photo" title="Group photo"/></li><!--third image that will appear on flexslider-->
+	<li><img src="images/SliderImage4.jpg" alt="Group photo" title="Group photo"/></li><!--fourth image that will appear on flexslider-->
+    <li><img src="images/SliderImage5.jpg" alt="Group photo" title="Group photo"/></li><!--fifth image that will appear on flexslider-->
+  </ul>                                                               <!--closing unordered list div tag-->
+</div>                                                                <!--closing flexslider div tag-->
+<nav class="clearfix">                                                <!--clearfix created to hold nav bar content in correct position-->
+  <ul class="clearfix">                                               <!--ul class clearfix created to hold elements in place-->
+    <li><a href="index.html">Home</a></li>                            <!--creates link to home page-->
+    <li><a href="aboutus.html">About Us</a></li>                      <!--creates link to about us page-->
+    <li><a href="clubrides.html">Club Rides</a></li>                  <!--creates link to club rides page-->
+    <li><a href="safecycling.html">Safe Cycling</a></li>              <!--creates link to safe cycling page-->
+    <li><a href="gallery.html">Gallery</a></li>                       <!--creates link to gallery page-->
+    <li><a href="faq.html">FAQ</a></li>                               <!--creates link to faq page-->
+    <li><a href="contactus.html">Contact Us</a></li>                  <!--creates link to contact us page-->
+  </ul>                                                               <!--closing ul div tag-->
+  <a href="#" id="pull">Menu</a>                                      <!--makes the menu text a link and has id pull for css styling-->   
+</nav>                                                                <!--makes the menu text a link and has id pull for css styling-->
+<div class="clearfix"><h1>Safe Cycling- Advice on group cycling</h1></div><!--created clearfix div to hold h1 text-->
+<div class="clearfix"><h4>Click on the links below to view specific information:</h4></div>
+<div class="safe_cycling clearfix">                                   <!--created a div clearfix to hold link information-->
+  <ul>                                                                <!--opening ul div tag-->
+    <li><a href="#GR">General Riding</a></li>                         <!--link created to specific part on page-->
+    <li><a href="#RR">Road Racing</a></li>                            <!--link created to specific part on page-->
+    <li><a href="#Mechanical">When You Have A Mechanical</a></li>     <!--link created to specific part on page-->
+    <li><a href="#Unwritten">Unwritten Rules Of The Road</a></li>     <!--link created to specific part on page-->
+    <li><a href="#Training">Club Training/Touring Rides</a></li>      <!--link created to specific part on page-->
+    <li><a href="#Conclusion">Conclusion</a></li>                     <!--link created to specific part on page-->
+  </ul>                                                               <!--closing ul div tag-->
+</div>                                                                <!--closing safe_cycling clearfix div tag-->
+<div class= "clearfix">                                               <!--opening div tag to hold all text inside-->
+ This document is aimed at those who have recently started cycling with the club, but will be useful for more experienced riders to brush up on their skills. It outlines what to expect when riding with other cyclists in a group, or ‘bunch’ as it is known, in a variety of situations and discusses how to stay safe and take most benefit from each other’s slipstream. It will not cover the real basics of how to ride a bike on public roads, the rules of the road etc. These are all covered in the highway code which can be accessed online via:
+http://www.direct.gov.uk/en/TravelAndTransport/Highwaycode/Cyclists/index.htm<br><br><!--creates gap between text-->
+
+Dangers on a bicycle come in many forms, but the most common are from other road users and obstacles on the road itself. In order to stay safe all the riders in the bunch must avoid hazards whilst not colliding with each other in the process. Communication between riders in a bunch is the only real way of doing this.<br><br>                     <!--creates gap between text-->
+
+Some other basics are to ensure your bike is in good working order, that you carry a range of spares and that your clothing is appropriate for the weather. Food and drink is also important to keep you alert and make sure you get home having enjoyed your cycle. If you are unsure about these things the best way to find out is, as always, to speak to experienced riders who are generally helpful and more than happy to offer advice.<br><br>                                                 <!--creates gap between text-->
+
+<h2 id="GR">General Riding.</h2>                                      <!--h4 heading used to highlight information-->                         
+
+There are quite a few guidelines that apply to any situation when a group of riders are riding together be it a weekend club run, a road race or a leisure event.<br><br>                                      <!--creates gap between text-->
+
+As outlined above there are two main things a bunch of riders must do to stay safe:<br><br><!--creates gap between text-->
+
+1. Everyone must avoid hazards (ie. potholes, other road users, etc.). This is achieved by communication using a series of hand signals and occasional verbal signals which should be acted on, to avoid the danger, and then repeated by each rider down the line, to pass the information on to those behind.<br><br>                               <!--creates gap between text-->
+
+2. Riders must not collide with each other, particularly when in the process of avoiding a hazard;
+this is achieved by moving in a slow, predictable way and riding in a way that doesn’t endanger other riders.<br><br><!--creates gap between text-->
+
+The second point is the most easy to deal with so let’s look at it first. It is achieved by always making sure your movements within the bunch are slow and predictable.<br><br>                               <!--creates gap between text-->
+
+There are many things that make riders’ movements in a bunch unpredictable and dangerous. Some of the most common of these are:
+
+<h4>Watching the rider in front.</h4>                                 <!--h4 heading used to highlight information-->
+In a bunch you are quite close to the rider in front, if he/she has to react quickly to something your reaction may be too late. It is much safer to watch several riders ahead, you will see any sudden movements progressing down the bunch and be able to avoid them. You will still be able to see the rider in front of you through your peripheral vision. By using this method you try to predict what will happen, not react to it when it does.
+
+<h4>Throwing a wheel.</h4>                                            <!--h4 heading used to highlight information-->
+This is when a bike moves backwards as a rider gets out of the saddle. This is dangerous as the back wheel can easily hit the front wheel of the rider behind. To avoid this happening riders should take care to move their body forwards, and ensure they keep pressure on the downstroke, when standing out of the saddle rather than pushing their bike back. Also when sitting behind another rider be sure to sit slightly to one side of their wheel in case they throw a wheel at you.
+
+<h4>Overlapping a wheel.</h4>                                         <!--h4 heading used to highlight information-->
+When a rider, who is sitting behind another, has their front wheel overlapping the back wheel of the rider in front. This causes problems if the rider in front has to swerve to the side for some reason. If this happens the two wheels can collide and the rider behind can find it difficult to stay upright. To avoid this simply don’t overlap a back wheel.
+
+<h4>Overcompensating movements.</h4>                                  <!--h4 heading used to highlight information-->   
+If a rider near the front of a bunch makes an unexpected movement, either sideways or by grabbing the brakes, the rider behind reacts to it and instinctively adds a bit onto it. The next rider does the same, the next the same and so on. By the time this movement reaches the back of the bunch the small movement becomes a large movement causing riders to collide with each other or forcing riders onto the wrong side of the road. These movements are usually sideways and are known as ‘switches’. The best way to avoid this is for everyone to avoid any sudden movements, particularly near the front of the bunch. However, sometimes these movements cannot be avoided and so it is always best to look a few riders ahead and predict these switches coming down the bunch and try to move in a slower and more predictable way as they approach you.<br><br>                                                          <!--creates gap between text-->
+
+In the big sprint finishes of the Tour de France and other pro races, when the pressure is on and riders are riding very close to each other switches can easily happen, and are responsible for the majority of crashes in big sprint finishes.
+
+<h4>Riding beyond your limits.</h4>                                   <!--h4 heading used to highlight information-->
+Inexperienced riders who ride closer to other riders than they can cope with can also cause problems. Only ride as close to other riders as you feel comfortable doing. The riders around you may be very experienced and can ride closely with ease. With practice you will feel more comfortable riding closer to other riders.
+
+<h4>Lack of concentration.</h4>                                       <!--h4 heading used to highlight information-->
+All of the problems above can be exaggerated by lack of concentration. This can be for many reasons, including tiredness. Always remain aware of what is going on around you in the bunch and eat and drink appropriately to avoid becoming over tired. Towards the end of a long ride look out for signs of tiredness and lack of concentration in others; slow reactions, more erratic movements than usual, dropping their head, locking their elbows to name but a few, and be aware that they will react more slowly than usual.<br><br><!--creates gap between text-->
+
+When riding in a bunch you have different responsibilities depending on where you are riding, at the front, in the middle or at the back.
+
+<h4>Riding at the front.</h4>                                         <!--h4 heading used to highlight information-->
+
+The most important member(s) of the bunch at any one time are those at the front. They are the eyes of the bunch as everyone else’s view is obstructed by them. It is down to them to spot dangers in good time and ensure everyone in the bunch avoids the danger.
+
+<h4>Pointing potholes/obstructions.</h4>                              <!--h4 heading used to highlight information-->
+
+If the rider(s) at the front spot a pothole, poor road surface or obstacle such as a large stone or brick, with plenty of time they should:<br><br>   <!--creates gap between text-->
+
+1. Slowly move across the road to a position where they will avoid the hole.<br><br><!--creates gap between text-->
+2. Point to where the hole is to allow those behind to avoid it (see Fig 1) and continue to point until the hole has been passed.<br><br>  <!--creates gap between text-->
+3. Slowly move back to their original position on the road.<br><br>   <!--creates gap between text-->
+
+If the hole or bad surface is larger than about 30cm (1 foot) the same process is used but a waving hand is used instead of a pointed finger, this shows the obstacle is larger (see Fig 2).<br><br>        <!--creates gap between text-->
+
+For particularly dangerous holes riders may choose to shout ‘HOLE’ to accompany the hand signal. However, care must be taken to shout in a clear way without startling other riders, particularly the less experienced, as this may be more dangerous than the original hazard. Shouts of ‘HOLE RIGHT’ or ‘HOLE LEFT’ etc. should never replace the hand signals as following riders have only a vague idea of where the hazard is. Pointing is much more accurate, less startling and therefore safer.
+
+<h4>Parked cars etc.</h4>                                             <!--h4 heading used to highlight information-->
+
+The same procedure is used for parked cars etc but the hand signal is different. It is a difficult signal to explain but hopefully Fig 3 should give you a good idea if it.
+  
+<h4>Oncoming Traffic.</h4>                                            <!--h4 heading used to highlight information-->
+
+Many vehicles approach and meet the bunch from the other direction and for the majority of these no action is required. However, if the vehicle is particularly large or might pass closer to the bunch than riders behind might expect, the same signal as above is employed except the right hand is used, see Fig 4. This may also be accompanied by the shout of ‘CAR DOWN’. The DOWN referring to the vehicle moving down the bunch.<br><br>                                               <!--creates gap between text-->
+
+Hand signals tend to be different in different countries, or even different parts of countries. This is important for those who may travel to ride events like the Etape du Tour or other European leisure events, or for those who watch cycling on television and see different hand signals used in the pro peleton. The hand signals shown here are those widely accepted in Ulster.
+
+<h4>In the middle.</h4>                                               <!--h4 heading used to highlight information-->
+
+Riding in the middle of the bunch should be reasonably easy. Just follow the riders in front, react to their signals, then repeat them for those behind. If you hear any shouts from behind, pass them on up the bunch and remember to avoid any unnecessary erratic movements.
+
+<h4>At the back.</h4>                                                 <!--h4 heading used to highlight information-->
+
+Riding at the back of a bunch is much the same as riding in the middle, with two notable exceptions.<br><br><!--creates gap between text-->
+
+1. You are the rider(s) who warns the rest of the bunch about other road users who are overtaking the bunch. When you become aware that a vehicle is overtaking the bunch shout, clearly but without startling other riders, ‘CAR UP’. It doesn’t really matter if it’s not a car.<br><br>   <!--creates gap between text-->
+2. If the bunch intends to turn left or right, you are the rider(s) the traffic behind will see, so make sure you check behind you to see what the other traffic is up to, advise the rest of the bunch when it is safe to move across the road, if turning right. Make your hand signals very clear to alert motorists behind.<a href="#top">Back to top of page</a><!--when link is clicked it will take user to top of page-->
+
+<h2 id="RR">Road Racing.</h2>                                         <!--h2 heading used to highlight information-->
+
+Cycle racing is a great sport. One of the striking things about it is how all the riders do their bit to keep everyone safe. No rider ever wants to win a race because a competitor has crashed out. So everything discussed above is used to ensure everyone stays upright, not doing your bit to keep everyone safe is considered extremely unsportsmanlike.<br><br><!--creates gap between text-->
+
+In a road race there are some situations that you will meet that you won’t come across anywhere else and some ‘unwritten rules’ that you need to be aware of. The importance of not making any unnecessary erratic movements is even greater in a race situation as riders tend to be in closer quarters.
+
+<h4>Up and Overs.</h4>                                                <!--h4 heading used to highlight information-->
+
+‘Up and Overs’ is the accepted name in this part of the world for the method a bunch of racing cyclists use to work together to move as quickly as possible while sharing the work into the wind. The name comes from the process of riding Up to the front and then moving Over to move towards the back again. Other names for it are ‘Through and Off’, ‘Bit and Bit’, ‘Chain Gang’ and many others, but they are all the same thing.<br><br>                                                   <!--creates gap between text-->
+
+The bunch forms into two lines beside each other. One line is moving about 2 to 3 miles per hour faster than the other. As a rider gets to the front of the faster line they move over to become the front of the slower line and then gently slow to the speed of the slower line. They then slowly move down the bunch towards the back in that line. When at the back they then move across to the back of the faster line and speed up to the speed of that line. They then move up the bunch in the faster line until they are at the front and the process begins again. This means that each rider spends a short time at the front in the wind and the rest of the time recovering. This lets the bunch move at a good speed, but your time at the front can be quite tough.<br><br><!--creates gap between text-->
+
+It can be difficult to do Up and Overs well. The more smoothly and effectively it can be done, the less energy is wasted, and therefore the bunch can travel at higher speeds. Practice is the only way to become good at it, but let’s look at some of the finer points.<br><br>  <!--creates gap between text-->
+
+There are two critical points when doing Up and Overs, when you are changing from one line to the other at the front, and again at the back. When you are in one of the lines all you have to do is to follow the rider in front and react to, and repeat any, safety signals.
+
+<h4>Changing at the back.</h4>                                        <!--h4 heading used to highlight information-->
+
+The difficult thing when changing at the back, into the faster line, is making sure you get straight onto the wheel of the rider you should be behind. If you let a gap open, you will have to put in an extra effort to get up to the rider in front. This also means that the rider who should be behind you may not fancy having to put in an extra effort to chase you, and when you arrive at the front you could find nobody following you and you end up riding into the wind for longer than you want to. This may also be made difficult by riders staying at the back and not getting involved in the Up and Overs. You may be expecting them to come past you but they intend to stay at the back.<br><br>                                                              <!--creates gap between text-->
+
+There are several ways to avoid this. The most obvious is to remember the rider you sit behind in the faster line, then when they pass you, you know you have to be behind them, or ‘on their wheel’. This, however, is not always dependable as the order the riders are in may change for some reason. The best solution is that every rider, when they move into the faster line and pass the rider who should follow them into that line, says ‘LAST MAN’ / ‘LAST WOMAN’ / ‘LAST RIDER’, you get the idea. The rider then knows that they have to follow that rider into the faster line.
+ 
+<h4>Changing at the Front.</h4>                                       <!--h4 heading used to highlight information-->
+
+This is the most difficult part of Up and Overs, or should I say, the easiest part to make mistakes with. It is not made any easier by the effort you have to put in as you hit the wind at the front. There are four common errors made when changing at the front.
+
+<h4>1. Accelerating when you reach the front.</h4>                    <!--h4 heading used to highlight information-->
+The rider in front of you will pull over and slow down so you don’t have to accelerate to pass them. If you accelerate, everyone else has to too and the rhythm of the bunch is disrupted. Try to keep the same speed until you are ready to pull over into the slower line. This can be difficult as you need to put more pressure on the pedals to keep the same speed as the wind begins to hit you, but it will come with practice.
+
+<h4>2. Not moving over quickly enough.</h4>                           <!--h4 heading used to highlight information-->
+The idea is to ride past the rider who has just moved over and pull over just in front of them. If done perfectly they shouldn’t have to increase or decrease their speed to be on your wheel. If you ride too far past them they have to chase your wheel and the rider who will pull over in front of you has to do a longer effort too. This upsets the rhythm of the bunch and the riders who have to make the extra efforts may become annoyed if it happens persistently. It can be difficult to get this right, particularly as inexperienced riders worry about cutting up the rider they are pulling in front of. If you always move slowly and smoothly across and leave some room on the inside, in case you have overlapped their wheel, there shouldn’t be a problem.
+
+<h4>3. Moving over but not slowing down to the speed of the slow line.</h4><!--h4 heading used to highlight information-->
+Doing this causes similar problems as not moving over quickly enough. Both the rider you are moving in front of and the rider who will move in front of you have to make extra efforts, again resulting in a loss in rhythm and annoyance. Getting this right takes practice. Remember to begin to reduce your speed as soon as you move across reducing it over two to three seconds. Keep pedalling as you do this, never reduce your speed with your brakes and only freewheel on a steep downhill or in a strong tailwind. While in the two lines learn how the difference in the speeds of each line feels and looks, this should help you judge the speed difference when changing.
+
+<h4>4. Moving over and slowing too much.</h4>                          <!--h4 heading used to highlight information-->
+This is the least common problem as inexperienced riders are apprehensive of slowing the bunch, and this apprehension leads to the problems above, however, it can occur from tine to time. Again try to observe the speed difference between the two lines as you are in them. If you are slowing quite a bit because you are suffering physically, you just can’t put any more effort into the pedals, it is best, for you and the bunch, that you sit at the back of the bunch and only contribute when you can. Don’t worry if this happens, a few races doing this and your fitness will soar as these types of efforts are great training.
+
+<h4>Other things to consider.</h4>                                     <!--h4 heading used to highlight information-->
+
+Inexperienced riders don’t usually realise that they are making these errors, but the more experienced riders in the bunch usually speak up. A word of caution though. Riders can give advice in quite a short, sharp way during a race. Try not to take offence at this if it happens. Racing is tough and if you make these errors others may have to put in an extra effort to close a gap, after doing that they simply don’t have the breath for a pleasant, well mannered conversation about the situation.<br><br><!--creates gap between text-->
+
+Riders may choose to stay at the back of the bunch and not contribute to the up and overs. This may be for a variety of reasons; they need a short rest, they want to eat something (although most experienced riders can eat while doing up and overs) or a variety of other reasons. If you drop to the back for a short time, it is generally not a problem, however, if you stay there for quite a long period of time it is worth considering the ‘Unwritten Rules of Road Racing’ detailed at the end of the road racing section.<br><br><!--creates gap between text-->
+
+Generally the quicker line is on the right hand side and the slower line is on the left, closer to the hedge (in Ireland and GB, on the continent it is the other way round). However, if the wind is strong and coming from the right it makes more sense for the slower moving line to protect the faster line from the wind. In this situation the faster line will be the one on the left, closer to the hedge, and the slower line on the right. This change usually becomes necessary on a change of direction, i.e. after a corner, and will be organised by the experienced members of the bunch. All you have to do is be aware that it may happen and follow instructions.<br><br><!--creates gap between text-->
+
+Smoothness is the key to Up and Overs. Smooth riding allows everyone to stay as close as possible to each other, hence they gain the most slipstream, energy is saved and this is turned into more speed.
+
+<h4>Cornering in Road Races.</h4>                                      <!--h4 heading used to highlight information-->
+
+Except in tight town centre races, road races are almost never won by taking a corner more quickly than someone else. In this part of the world corners are very rarely near the finish line. However, quite a few crashes happen at corners and so safety first is the best approach.<br><br>                                                               <!--creates gap between text-->
+
+For curves in the road simply keep a good line and follow the riders in front. If you are at the front, choose a sensible line. You may be able to take the corner a bit tighter but remember those behind you with other riders around them who will follow your line. As well as looking for potholes etc. be on the look out for areas of oil, diesel, petrol, gravel or wet tarmac (if it’s dry) as these may cause riders to slide. If you see them point them out in the usual way that you point out a hole. Also be particularly vigilant for approaching traffic. This may require you to listen for engine noise approaching the corner from the other side. If it is a right hand bend be careful not to cut the corner and give the shout ‘CAR DOWN’ and possibly add ‘DON’T CUT’ to the other riders. If it’s a left hand bend be aware that the vehicle may cut the corner onto your side of the road.<br><br>         <!--creates gap between text-->
+
+At junctions the guidelines above should be followed but you will also meet race marshals. A marshal’s job is to point the bunch down the right road and to warn other road users of the race. Marshals are not allowed to stop the traffic to let the bunch pass, but on seeing the marshals most road users kindly stop briefly to let the bunch pass safely. Do not, however, take this as the norm. Marshals cannot stop the traffic and some drivers will drive on. Marshals may also shout to warn you of a danger, take heed of this warning as they will be positioned to see further round the corner than you can. This warning should be repeated by the riders in the bunch as they see the danger to give an idea as to how far around the corner it is. Alternatively a marshal may shout ‘CLEAR’ to the bunch. This means that they cannot see any dangers. This does not mean that there are no dangers. If you go around a corner too aggressively and, for example, hit a car, it will be you and you alone who will be held responsible, so always keep to your own side of the road. Also be particularly careful of gravel at road junctions.<br><br>                                              <!--creates gap between text-->
+
+In order to move up the bunch without expending energy some riders try a formula one style out-breaking move up the inside of the bunch into a bend. While this naturally happens in a small way when a bunch goes round a tight corner, large out-breaking moves are dangerous as a tighter line into a corner forces riders on the outside to readjust their line into the corner. It also requires a wider line out of it, this will push other riders wide and possibly into oncoming traffic.<a href="#top">Back to top of page</a><!--when link is clicked it will take user to top of page-->
+
+<h2 id="Mechanical">When you have a mechanical.</h2>                   <!--h2 heading used to highlight information-->
+
+If you have a mechanical problem during a race try to make others aware by raising your arm, then slip back through the bunch without making any erratic moves. Try to not let your speed drop too much if at all possible. Then when you are sure you are at the back of the bunch you can sort the problem.<a href="#top">Back to top of page</a>  <!--when link is clicked it will take user to top of page-->
+
+<h2 id="Unwritten">‘Unwritten Rules’ of th road.</h2>                  <!--h2 heading used to highlight information-->
+
+(And yes I do realise the irony of the name ‘Unwritten Rules’ as I write them down.)<br><br><!--creates gap between text-->
+
+There are some things that, while not being against the rules of road racing, are considered ‘not on’ by those who race. You should be aware of these before you start to race. If you flout these unwritten rules you will not be disqualified, but may find yourself on the receiving end of some harsh words. A famous cyclist once said that in each race there are only a handful of riders who are really in with a chance of winning it, but there are quite a few more, who can’t win it, but can decide who does. So it doesn’t do to make too many enemies among the riders you race against week in, week out.<br><br>           <!--creates gap between text-->
+
+If the pressure is on and you are having trouble staying with the rider in front and a gap begins to open that you can’t close, you should let the rider(s) behind know about this. A simple hand movement to wave the rider behind through will suffice. When the pressure is on even a small gap of two or three bike lengths can be near impossible to close and the rider who opens that gap without letting the riders behind know about it is never popular.<br><br>                                <!--creates gap between text-->
+
+As discussed some riders may choose to sit at the back of the bunch for extended periods of time in the slipstreams and not contribute to the pace setting. Most riders accept this as we have all had times when we were not fit enough to contribute to the pace setting and will allow the rider to stay there for the training. However, the unwritten rule is that if you haven’t contributed significantly to the work of the bunch you don’t try to win the race. There are times when this is black and white and other times when this is a very grey area. I will let you enjoy working out just when it holds and when it’s up for debate.<a href="#top">Back to top of page</a><!--when link is clicked it will take user to top of page-->
+
+<h2 id="Training">Club Training/Touring Rides.</h2>                    <!--h2 heading used to highlight information-->
+
+All the points mentioned in the general riding section apply when riding in a bunch. But the points below apply when you are not racing but riding with other cyclists in, for example, a club run, a reliability trial or a leisure event.<br><br><!--creates gap between text-->
+
+Usually in these situations the bunch forms into two lines beside each other. Riders then ride in pairs until told to change by the group leader. At this point the rider on the right at the front of the bunch moves in front of the rider to their left and the rider that was behind them rides up alongside them. Everyone in the right line then moves up one place. This is quite similar to the ‘Up and Overs’ discussed in the racing section, except the changes don’t happen continually but occasionally on the call of the group leader. How often the changes are made are down to the group leader and are based on how fast the group is moving and how strong the riders are at the front.<br><br>                                                               <!--creates gap between text-->
+
+Every group should have a leader. Most clubs will have selected a club captain who is in charge of their club runs. On other types of rides the experienced riders will casually select a group leader amongst themselves as the run begins. It is the job of the group leader to call directions, i.e. left or right turns onto different roads, control the pace of the bunch and decide when the riders at the front should change by calling ‘CHANGE’.<br><br>                                    <!--creates gap between text-->
+
+Usually the club captain decides on the route of the club run, quite often deciding as they go based on many different factors. However, they are usually open to suggestions of different routes if the suggestion is reasonable. It is very important that the group leader and only the group leader calls directions. These directions should be passed on by the members of the group but no rider should shout their own directions or pre-empt the call from the group leader. You can imagine the consequences of this if someone shouts ‘LEFT’ for example and the group leader then calls ‘RIGHT’. Confusion reigns as some riders turn left, others turn right and collisions are almost inevitable.<br><br>                                                               <!--creates gap between text-->
+
+When at the front of the bunch ride steadily. The group leader will shout ‘EASY’ if you are riding too hard. If you find yourself riding slightly ahead of the rider beside you when at the front you are riding too hard. This practice is know as half-wheeling, from riding half a wheel ahead of the other person and is considered bad manners as they constantly have to try to match your pace.<br><br><!--creates gap between text-->
+
+While out with a group you should ride at a reasonable pace, as set by the group leader, and look after everyone in the bunch. There will be times when you can test yourself against the other riders who also enjoy ‘a bit of a race’. You will learn when these sorts of things happen after a few times out with the bunch and you are free to join in. It is important though to let the bunch regroup, making sure nobody is left behind, before continuing on your way. It is essential that everyone who leaves with the bunch, returns with the bunch. This is particularly important with young and/or inexperienced riders who may not know the way home. Leaving riders behind to fend for themselves is bad manners and is not the act of a true cyclist.<br><br><!--creates gap between text-->
+
+At times, on particularly narrow sections of road or with a large build up of traffic, the group leader may call for the bunch to ‘SINGLE OUT’ or ‘SINGLE FILE’. In this instance the inside line allows gaps to open between each rider and these gaps are then filled by the riders from the outside line forming one single line. When this happens make sure to keep well in to the side of the road and expect traffic to pass. Once the traffic has passed the signal will be given to reform into two lines which is simply done by reversing the process.<br><br>  <!--creates gap between text-->
+
+When cornering keep a smooth line. The ‘racing line’ of cutting the apex may or may not be the best choice, think of those around you and behind you when making the choice for the best line through the corner.<br><br><!--creates gap between text-->
+
+Leisure events can attract bigger fields, and therefore bigger bunches, than races. As in racing every movement gets multiplied down the bunch and so it is important to ride smoothly.<a href="#top">Back to top of page</a><!--when link is clicked it will take user to top of page-->
+
+<h2 id="Conclusion">Conclusion.</h2>                                    <!--h2 heading used to highlight information-->                         
+
+There is a lot to take in, and you will make mistakes, but then we all did when we were starting. The key is to learn from the experienced riders around you, work together to make sure everyone gets home safely, and most importantly …<br>  <!--starts a new line-->
+
+enjoy.<br><a href="#top">Back to top of page</a>                        <!--when link is clicked it will take user to top of page-->
+  </div>                                                                <!--closing div tag which holds all paragraph text inside-->
+<div class="footer clearfix">                                           <!--opening footer clearfix tag-->
+  <div class = "article-third-left"><h5>For direct enquiries contact: Alan McGinty 164 Old Carrick Road, Carrickfergus Phone: 02893 869334 Email: allanmcginty@yahoo.co.uk</h5></div>                            <!--article third left div which holds contact details-->
+  <div class = "article-third-left"><h5>Copyright&copy; East Antrim Cycling Club 2017</h5></div>                                                  <!--article third left div which holds the h5 text, the &emsp; code is used to create the white space, each one replicates the size of a tab-->
+  <div class = "article-third-right"><h2>Find us at: <a href="https://twitter.com/eastantrimcc?lang=en" style="margin-right: 10px;" target="_blank">Twitter</a>                                                  <!--article third right div which holds link to twitter-->        
+  <a href="https://en-gb.facebook.com/eastantrimcyclingclub/" style="margin-left: 20px;" target="_blank">Facebook</a></h2><!--this anchor tag holds link to facebook-->
+  </div>                                                                <!--closing article third right div tag-->
+</div>                                                                  <!--closing footer clearfix tag-->
+</div>                                                                  <!--main container closing div tag-->
+</body>                                                                 <!--closing body tag-->
+</html>                                                                 <!--closing html tag-->

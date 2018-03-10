@@ -1,0 +1,150 @@
+<!doctype html>                                                       <!--lets browser know what type of document this is-->        
+<html lang="en">                                                                <!--opening html tag-->
+<head>                                                                <!--opening head tag, all meta data and external links etc are stored in the head section, none of this is visable to the user on the webpage-->
+<meta charset="utf-8">                                                <!--character encoding for for unicode-->
+<title>East Antrim Cycling Club Contact Us Page</title>               <!--this is the title seen in the browser bar--> 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script><!--link to external jquery library so page can use its interactive features--> 
+<script src="scripts/jquery.flexslider.js"></script>                  <!--script tag which holds the link to allow the flexslider to work-->
+<meta name="description" content="East Antrim Cycling Club contact us page."><!--meta data to help improve SEO-->
+<meta name="keywords" content="East Antrim Cycling Cycling Club, Contact Us Page, Cycling"><!--meta data to help improve SEO-->
+<meta name="author" content="Trevor Campbell">                        <!--meta data to help improve SEO-->
+<link href="http://fonts.googleapis.com/css?family=Bitter" rel="stylesheet" type="text/css"><!--adds a link to the Google fonts API-->
+<link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css"><!--adds a link to the Google fonts API-->
+<link href="styles/styles.css" rel="stylesheet" type="text/css">      <!--this links to the styles sheet which holds all css data-->
+<link href="styles/normalise.css" rel="stylesheet" type="text/css">   <!--this links to normalise css file to provide better cross-browser consistency for the default styling of html elements.--> 
+<link rel="stylesheet" href="styles/flexslider.css"  type="text/css"> <!--link created to flexslider file in styles folder to make FS work-->
+<script>                                                              <!--this script enables the load function for the flexslider to work-->
+$(window) .load(function() {                                          <!--the jquery calls the load function and initializes the flex-slider to work-->        
+$('.flexslider') .flexslider({                                        <!--this can hold different flexslider settings between the brackets-->
+slideshowSpeed: 4000,                                                 <!-- sets the flexslider to change image every four seconds-->
+})                                                                    <!--closing brackets for the flexslider speed settings-->
+});                                                                   <!--closing brackets for all the flexslider function settings--> 
+</script>                                                             <!--closing script tag for the flexslider section-->
+<script>                                                              <!--This script section has the code which allows the website to be responsiveness-->
+$(function() {                                                        <!--jquery function to hold all the nav bar jquery settings-->       
+var pull   = $('#pull');                                              <!--links to the pull id code initiating the pull down menu once clicked upon by the user. This is achieved by using this jQuery slideToggle()-->
+menu   = $('nav ul');                                                 <!--jquery function for operating the drop down nav unordered list-->                                               
+$(pull).on('click', function(e) {                                     <!--this create the pull down event when the user clicks on the nav bar-->           
+ e.preventDefault();                                                  <!--this prevents the default click event from happening-->
+ menu.slideToggle(); }
+ ); 
+ $(window).resize(function(){                                         <!--This call the resize function allowing the website to resize when neccessary-->
+ var w = $(this)
+ .width(); 
+ if(w > 800 && menu.is(':hidden')) {                                  <!--If the window to the website is greater than 800px then the menu will be hidden using the resize function-->
+ menu.removeAttr('style'); } 
+ }
+ ); $('li')
+ .on('click', function(e) {                                           <!--If the window to the website is smaller than 800px then the menu will become a slide toggle and will be on view-->                    
+ var w = $(window).width(); 
+ if(w < 800 ) {
+ menu.slideToggle(); 
+ } }
+ ); 
+ $('.panel').height($(window).height());                              <!--sets the elements height equal to the windows height-->
+ }
+ );
+function MM_validateForm() { //v4.0                                   <!--code related to form validation-->
+  if (document.getElementById){
+    var i,p,q,nm,test,num,min,max,errors='',args=MM_validateForm.arguments;
+    for (i=0; i<(args.length-2); i+=3) { test=args[i+2]; val=document.getElementById(args[i]);
+      if (val) { nm=val.name; if ((val=val.value)!="") {
+        if (test.indexOf('isEmail')!=-1) { p=val.indexOf('@');
+          if (p<1 || p==(val.length-1)) errors+='- '+nm+' must contain an e-mail address.\n';
+        } else if (test!='R') { num = parseFloat(val);
+          if (isNaN(val)) errors+='- '+nm+' must contain a number.\n';
+          if (test.indexOf('inRange') != -1) { p=test.indexOf(':');
+            min=test.substring(8,p); max=test.substring(p+1);
+            if (num<min || max<num) errors+='- '+nm+' must contain a number between '+min+' and '+max+'.\n';
+      } } } else if (test.charAt(0) == 'R') errors += '- '+nm+' is required.\n'; }
+    } if (errors) alert('The following error(s) occurred:\n'+errors);
+    document.MM_returnValue = (errors == '');
+} }
+</script>                                                             <!--closing script tag which holds website responsiveness-->     
+</head>                                                               <!--closing head tag-->
+<body>                                                                <!--opeining body tag, all visable page content is held in the body-->
+<div class="container">                                               <!--opening container div tag-->
+<div class="weather">Weather<br>Today</div>                           <!--created a div to hold the weather today text-->
+<iframe width="120" height="73" style="border:0;" scrolling="no" src="http://www.weathercast.co.uk/meteo/hptool/index.php?cid=44X139&cityName=Belfast&l=en&style=13&v=gb&ver=2&c1=ebf1f8&c2=0060ac&c3=000000&c4=ffffff&c5=000000&c6=ffffff&c7=0060ac&f1a=1&f1b=1&f2a=1&f2b=1&f3a=1&f3b=1&ct1=1&ct2=0&ct3=6&ct4=0&ct5=0&fcd=0"></iframe><!--closing iframe tag which holds link to real time external weather data, width and height both set to control size, frame set to have no scrollbar, frame also set to have no border using the CSS style attribute as the frameborder function is obsolete in html 5, the scrolling attribute is also obsolete in html 5 but still supported by all major browsers-->
+<div class="flexslider">                                              <!--div to hold all flexslider content-->
+  <ul class="slides">                                                 <!--unordered list class to hold the imageslider list-->
+    <li><img src="images/SliderImage1.jpg" alt="Group photo" title="Group photo"/></li><!--first image that will appear on flexslider-->
+    <li><img src="images/SliderImage2.jpg" alt="Group photo" title="Group photo"/></li><!--second image that will appear on flexslider-->
+    <li><img src="images/SliderImage3.jpg" alt="Group photo" title="Group photo"/></li><!--third image that will appear on flexslider-->
+	<li><img src="images/SliderImage4.jpg" alt="Group photo" title="Group photo"/></li><!--fourth image that will appear on flexslider-->
+    <li><img src="images/SliderImage5.jpg" alt="Group photo" title="Group photo"/></li><!--fifth image that will appear on flexslider-->
+  </ul>                                                               <!--closing unordered list div tag-->
+</div>                                                                <!--closing flexslider div tag-->
+<nav class="clearfix">                                                <!--clearfix created to hold nav bar content in correct position-->
+  <ul class="clearfix">                                               <!--ul class clearfix created to hold list elements-->
+    <li><a href="index.html">Home</a></li>                            <!--creates link to home page-->
+    <li><a href="aboutus.html">About Us</a></li>                      <!--creates link to about us page-->
+    <li><a href="clubrides.html">Club Rides</a></li>                  <!--creates link to club rides page-->
+    <li><a href="safecycling.html">Safe Cycling</a></li>              <!--creates link to safe cycling page-->
+    <li><a href="gallery.html">Gallery</a></li>                       <!--creates link to gallery page-->
+    <li><a href="faq.html">FAQ</a></li>                               <!--creates link to faq page-->
+    <li><a href="contactus.html">Contact Us</a></li>                  <!--creates link to contact us page-->
+  </ul>                                                               <!--closing ul div tag-->
+  <a href="#" id="pull">Menu</a>                                      <!--makes the menu text a link and has id pull for css styling-->   
+</nav>                                                                <!--closing nav bar div tag-->
+<div class="clearfix"><h1>Contact Us</h1></div>                       <!--clearfix div created to hold the h1 header-->
+<div class= "clearfix">                                               <!-- clearfix to hold all article left and right elements in place-->
+  <div class="article-half-left">                                     <!--opening article half left div tag-->
+    <div id="contact-form">                                           <!-- div that holds all form data and given id of contact-form for css styling-->
+	  <div>                                                           <!--opening div tag which holds the h1 and h4 text-->
+		<h1>Nice to Meet You!</h1>                                    <!--h1 element created to hold first line of text inside form-->
+		<h4>Have a question or just want to get in touch? Let's chat.</h4>  <!--h4 element created to hold second line of text inside form-->
+	  </div>                                                          <!--closing div tag which holds the h1 and h4 text-->
+	  <form id="cycling_enquiry" name="enquiry" method="post" action="mailto:allanmcginty@yahoo.co.uk">   <!--this holds the email address to where all form enquiries are sent to when the user fills in the form an hits send-->
+	    <div>                                                         <!--div created to hold all "name" values-->
+		  <label for="name">                                          <!--label created called "name"-->
+		  <span class="required">Name: *</span>                       <!--this is the text which appears above the drop down box-->
+		  <input type="text" id="name" name="name" placeholder="Your Name" />                                                            <!--"name" text appears above label box, the user inputs their own name into the box on form which stores and sends the data when user hits send button-->
+		   </label>                                                   <!--closing label tag-->                                            
+	    </div>                                                        <!--closing name div tag-->                       
+	    <div>                                                         <!--div created to hold all "email" values-->
+		  <label for="email">                                         <!--label created called "email"-->
+		    <span class="required">Email: *</span>                    <!--this is the text which appears above the drop down box-->
+		    <input type="text" id="email" name="email" placeholder="Your Email" /><!--"email" text appears above box which asks users to input their email address for corespondence with cycling club-->
+		  </label>                                                    <!--closing label tag-->
+		</div>                                                        <!--closing "email" div tag-->
+	    <div>	                                                      <!--div created to hold all "subject" values-->	          
+		  <label for="subject">                                       <!--label called subject holds all options in drop down menu-->   <span>Subject: </span>                                      <!--this is the text which appears above the drop down box-->
+			   <select id="subject" name="subject" tabindex="8">      <!--drop down table index to hold 8 values-->
+			     <option value="hello">General</option>               <!--first option to appear in drop down box-->
+			     <option value="quote">Membership</option>            <!--second option to appear in drop down box-->
+			     <option value="general">Events</option>              <!--third option to appear in drop down box-->
+			     <option value="general">Club Kit</option>            <!--fourth option to appear in drop down box-->
+				 <option value="general">Cycling Insurance</option>   <!--fifth option to appear in drop down box-->
+				 <option value="general">Website problems</option>    <!--sixth option to appear in drop down box-->
+				 <option value="general">Website navigation</option>  <!--seventh option to appear in drop down box-->
+				 <option value="general">Greivances</option>          <!--eigth option to appear in drop down box-->
+			   </select>                                              <!--closing select div tag-->
+		  </label>                                                    <!--closing label tag-->
+	    </div>                                                        <!--closing "subject" div tag-->
+	    <div>	                                      	              <!--div created to hold all "message" values-->    
+		  <label for="message">                                       <!--label is called message which will let the user input data-->     <span class="required">Message: </span>                    <!--this is the text which appears above the drop down box-->
+		   <textarea id="message" name="message" placeholder="Please write your message here." ></textarea> 
+		  </label>                                                    <!--this label lets user inpout a message that they want to send to cycling club through the contact form-->
+	    </div>                                                        <!--closing "message" div tag-->
+		<div>	                                                      <!--opening button send div tag-->		
+		  <button name="submit" type="submit" id="submit" onClick="MM_validateForm('name','','R','email','','RisEmail');return document.MM_returnValue" >SEND</button><!--created button type with submit function, given it id of submit for css styling. Once user clicks "SEND" if all fields are correct the email will be sent--> 
+	    </div>                                                        <!--closing button send div tag-->
+        <div> <input type="reset" name="clear" id="clear" value="Reset"></div><!--created a reset button to resort all details to default on the form if the user makes a mistake-->	
+      </form>                                                         <!--closing form tag-->
+    </div>                                                            <!--closing contact form div tag-->                                </div>                                                            <!--closing article half left div tag-->
+  <div class="article-half-right">                                    <!--opening article half right div tag-->
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2305.4995960347674!2d-5.95836668411005!3d54.70083298028518!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4861a64300cc9843%3A0x9c0c4dbfc6d5a90!2sBallyearl+Arts+%26+Leisure+Centre!5e0!3m2!1sen!2suk!4v1511702649205" width="600" height="450"  style="border:0"></iframe><!--this code shows how to place an embedded Google map on page, it also allows style attributes to be set with width, height and border etc. The link address is for the location of Ballyearl Leisure Centre-->
+  <h2>Club rides leave from Ballyearl Leisure Centre<br> which can be found using the map above.</h2> <!--h2 element created to hold text-->
+  </div>                                                              <!--closing article half right div tag-->
+</div>                                                                <!--closing class clearfix tag-->
+<div class="footer clearfix">                                         <!--opening footer clearfix tag which will store all footer content-->
+ <div class = "article-third-left"><h5>For direct enquiries contact: Alan McGinty 164 Old Carrick Road, Carrickfergus Phone: 02893 869334 Email: allanmcginty@yahoo.co.uk</h5></div>                           <!--article third left div which holds contact details-->
+  <div class = "article-third-left"><h5>Copyright&copy; East Antrim Cycling Club 2017</h5></div>                                                                    <!--article third left div which holds the h5 text-->
+  <div class = "article-third-right"><h2>Find us at: <a href="https://twitter.com/eastantrimcc?lang=en" style="margin-right: 10px;" target="_blank">Twitter</a>                                                <!--article third right div which holds link to twitter-->        
+  <a href="https://en-gb.facebook.com/eastantrimcyclingclub/" style="margin-left: 20px;" target="_blank">Facebook</a></h2><!--this anchor tag holds link to facebook-->
+  </div>                                                              <!--closing article third right div tag-->
+</div>                                                                <!--closing footer clearfix class div tag-->
+</div>                                                                <!--closing main container div tag-->
+ </body>                                                              <!--closing body tag-->
+</html>                                                               <!--closing html tag-->
